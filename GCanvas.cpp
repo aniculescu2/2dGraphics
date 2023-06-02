@@ -675,5 +675,33 @@ std::unique_ptr<GCanvas> GCreateCanvas(const GBitmap& device) {
 }
 
 std::string GDrawSomething(GCanvas* canvas, GISize dim){
-    return "something";
+    canvas->drawPaint(GPaint(GColor::RGBA(1, 1, 1, .9)));
+    GPoint leftLine[11] = {{128,40}, {128, 70}, {85, 160}, {85, 170}, {60, 170}, {63, 165}, {63, 153}, {60, 145}, {78, 145}, {84, 140}, {87, 134}};
+    canvas->drawConvexPolygon(leftLine, 11, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint rightLine[11] = {{128,40}, {128, 70}, {170, 160}, {170, 170}, {195, 170}, {192, 165}, {192, 153}, {195, 145}, {177, 145}, {171, 140}, {168, 134}};
+    canvas->drawConvexPolygon(rightLine, 11, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint leftHook[8] = {{70, 170}, {85, 170}, {89, 180}, {99, 189}, {110, 195}, {99, 192}, {89, 187}, {85, 185}};
+    canvas->drawConvexPolygon(leftHook, 8, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint rightHook[8] = {{185, 170}, {170, 170}, {166, 180}, {156, 189}, {145, 195}, {156, 192}, {166, 187}, {170, 185}};
+    canvas->drawConvexPolygon(rightHook, 8, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint leftChin[7] = {{60, 185}, {85, 200}, {101, 205}, {115, 205}, {115, 213}, {99, 210}, {87, 205}};
+    canvas->drawConvexPolygon(leftChin, 7, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint rightChin[7] = {{195, 185}, {170, 200}, {154, 205}, {140, 205}, {140, 213}, {156, 210}, {168, 205}};
+    canvas->drawConvexPolygon(rightChin, 7, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint chin[8] = {{115, 205}, {121, 203}, {128, 200}, {133, 203}, {140, 205}, {140, 213}, {128, 215}, {115, 213}};
+    canvas->drawConvexPolygon(chin, 8, GPaint(GColor::RGBA(.184, .247, .337, 1)));
+    GPoint leftStar1[6] = {{105, 165}, {110, 170}, {115, 170}, {110, 175}, {114, 180}, {105, 175}};
+    GPoint leftStar2[6] = {{105, 175}, {95, 180}, {100, 175}, {95, 170}, {100, 170}, {105, 165}};
+    canvas->drawConvexPolygon(leftStar1, 6, GPaint(GColor::RGBA(.5176, .0588, .0941, 1)));
+    canvas->drawConvexPolygon(leftStar2, 6, GPaint(GColor::RGBA(.5176, .0588, .0941, 1)));
+    GPoint rightStar1[6] = {{150, 165}, {145, 170}, {140, 170}, {145, 175}, {140, 180}, {150, 175}};
+    GPoint rightStar2[6] = {{150, 175}, {160, 180}, {155, 175}, {160, 170}, {155, 170}, {150, 165}};
+    canvas->drawConvexPolygon(rightStar1, 6, GPaint(GColor::RGBA(.5176, .0588, .0941, 1)));
+    canvas->drawConvexPolygon(rightStar2, 6, GPaint(GColor::RGBA(.5176, .0588, .0941, 1)));
+    GPoint centerHalfStar[6] = {{128, 175}, {134, 185}, {148, 185}, {138, 195}, {148, 205}, {128, 195}};
+    GPoint centerStar[6] = {{128, 195}, {108, 205}, {118, 195}, {108, 185}, {122, 185}, {128, 175}};
+    canvas->drawConvexPolygon(centerHalfStar, 6, GPaint(GColor::RGBA(.5176, .0588, .0941, 1)));
+    canvas->drawConvexPolygon(centerStar, 6, GPaint(GColor::RGBA(.5176, .0588, .0941, 1)));
+    return "Assassin's Creed";
+    
 }
